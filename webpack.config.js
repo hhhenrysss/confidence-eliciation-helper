@@ -19,11 +19,14 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.json']
+        extensions: ['.ts', '.tsx', '.js', '.json', '.css', '.scss']
     },
-    entry: "./index.ts",
+    entry: {
+        "index": "./index.ts",
+        "src/script": "./src/script.ts"
+    },
     output: {
-        filename: 'index.js',
+        filename: '[name].js',
         path: path.resolve('.')
     },
     watch: true,
