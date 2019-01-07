@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
     module: {
         rules: [
@@ -19,11 +21,13 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.json']
     },
-    entry: "./interface.ts",
+    entry: "./index.ts",
     output: {
-        filename: 'dist.js'
+        filename: 'index.js',
+        path: path.resolve('.')
     },
     watch: true,
     mode: 'production',
-    devtool: "#eval-source-map"
+    devtool: "#eval-source-map",
+    target: "electron-main"
 };
