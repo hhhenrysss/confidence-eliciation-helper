@@ -1,10 +1,11 @@
-import {app, BrowserWindow} from 'electron'
+import {app, BrowserWindow} from 'electron';
 
 
 let window: BrowserWindow | null;
 
 function createWindow(): void {
-    window = new BrowserWindow({width: 800, height: 600});
+    window = new BrowserWindow({width: 800, height: 600, titleBarStyle: 'hiddenInset'});
+    window.show();
     window.loadFile('index.html');
     window.webContents.openDevTools();
     window.on('closed', ()=>{

@@ -1,0 +1,14 @@
+body {
+  width: 100%;
+  font-family: Roboto, Helvetica, sans-serif;
+}
+
+#root {
+  padding: 1em;
+  margin: 0 auto;
+
+  button {
+    width: 2em;
+    border-radius: 0.5em;
+  }
+}

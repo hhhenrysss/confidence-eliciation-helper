@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Helper</title>
+    <title>Data Processing Helper</title>
 </head>
 <body>
-    <div id="root"></div>
+    <div id="root">
+        <section><h2>Data Processing Helper</h2></section>
+        <section>
+            <h4>Select directory to open</h4>
+            <p>The directory is supposed to contain all user-generated JSON files</p>
+            <div id="open_directory">
+                <button>Open Directory</button>
+                <div class="message"></div>
+            </div>
+        </section>
+        <section>
+            <h4>Select directory to save processed files</h4>
+            <div id="save_directory">
+                <button>Open Directory</button>
+                <div class="message"></div>
+            </div>
+        </section>
+        <section>
+            <div id="submit_task">
+                <button>Submit</button>
+                <div class="message"></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="src/script.js"></script>
 </body>
 </html>
