@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
+    "transpile": "webpack",
     "exec": "electron .",
     "dist": "build"
   },
@@ -14,7 +14,6 @@
   ],
   "build": {
     "appId": "com.ConfidenceElicitation.DataHelper",
-    "category": "public.app-category.developer-tools",
     "dmg": {
       "contents": [
         {

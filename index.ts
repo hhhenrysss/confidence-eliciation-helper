@@ -7,7 +7,7 @@ function createWindow(): void {
     window = new BrowserWindow({width: 800, height: 600, titleBarStyle: 'hiddenInset'});
     window.show();
     window.loadFile('index.html');
-    window.webContents.openDevTools();
+    // window.webContents.openDevTools();
     window.on('closed', ()=>{
         window = null;
     });
