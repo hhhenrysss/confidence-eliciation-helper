@@ -27,3 +27,5 @@ export class DirectoryOperations implements DirOps{
         return this.answer_file;
     }
 }
+
+export const hasOwnProperty = (obj: object, key: string): boolean => Object.prototype.hasOwnProperty.call(obj, key);
