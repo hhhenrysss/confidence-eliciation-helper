@@ -159,11 +159,10 @@ export class Processing implements ProcessingResponse{
             });
         });
     }
-    async processingDir(callback?: processingCallback): Promise<string> {
+    async processingDir(callback?: processingCallback): Promise<null> {
         const source_dir = this.dir_obj.getOpenDirectory();
         const dest_dir = this.dir_obj.getSaveDirectory();
         const answer_file_path = this.dir_obj.getAnswerFilePath();
-        const dest_file_name = 'result.json';
 
         const answer_obj = await this.loadAnswerFile(answer_file_path);
         let result_arr: processedObjStructure[];
@@ -185,9 +184,9 @@ export class Processing implements ProcessingResponse{
             throw e;
         }
         return new Promise((resolve, reject) => {
-            fs.writeFile(dest_dir+'/'+dest_file_name, JSON.stringify(result_arr), (err) => {
+            fs.writeFile(dest_dir, JSON.stringify(result_arr), (err) => {
                 if (err) reject(err);
-                resolve(dest_file_name);
+                resolve();
             });
         });
     }
