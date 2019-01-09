@@ -144,6 +144,15 @@ export class Processing implements ProcessingResponse{
         return '';
     }
 
+    private static async getAllFiles(dir_path: string): Promise<string[]> {
+        return new Promise((resolve, reject) => {
+            fs.readdir(dir_path, (err, files) => {
+                if (err) reject(err);
+                resolve(files);
+            });
+        });
+    }
+
     private async processingFile(file_path: string, answer_obj: AnswerFileObjectStructure[]): Promise<processedObjStructure> {
         return new Promise((resolve, reject) => {
             fs.readFile(file_path, "utf8", (err, data) => {
@@ -167,19 +176,12 @@ export class Processing implements ProcessingResponse{
         const answer_obj = await this.loadAnswerFile(answer_file_path);
         let result_arr: processedObjStructure[];
         try {
-            result_arr = await new Promise((resolve, reject) => {
-                fs.readdir(source_dir, (err, files) => {
-                    if (err) reject(err);
-                    const result_arr: processedObjStructure[] = [];
-                    files.forEach(async (filename) => {
-                        if (filename.endsWith(this.file_type)) {
-                            const result = await this.processingFile(source_dir+'/'+filename, answer_obj);
-                            result_arr.push(result);
-                        }
-                    });
-                    resolve(result_arr);
-                });
-            });
+            const files_arr = await Processing.getAllFiles(source_dir);
+            result_arr = await Promise.all(
+                files_arr
+                    .filter((filename: string) => filename.endsWith(this.file_type))
+                    .map(async (filename: string) => this.processingFile(source_dir+'/'+filename, answer_obj))
+            );
         } catch (e) {
             throw e;
         }

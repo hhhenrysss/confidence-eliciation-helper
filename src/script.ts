@@ -9,7 +9,7 @@ const handle_open_directory = (dir_obj: DirectoryOperations) => {
     $open_directory.on('click', (event) => {
         const path = dir_obj.getOpenDirectory();
         const $this = $(event.currentTarget);
-        $this.siblings('.message').first().html(`<strong>Open directory path: ${path}</strong>`);
+        $this.siblings('.message').first().html(`<p><small>Open directory path: ${path}</small></p>`);
     });
 };
 
@@ -18,7 +18,7 @@ const handle_save_directory = (dir_obj: DirectoryOperations) => {
     $save_directory.on('click', (event) => {
         const path = dir_obj.getSaveDirectory();
         const $this = $(event.currentTarget);
-        $this.siblings('.message').first().html(`<strong>Save directory path: ${path}</strong>`);
+        $this.siblings('.message').first().html(`<p><small>Save directory path: ${path}</small></p>`);
     });
 };
 
@@ -27,7 +27,7 @@ const handle_open_answer_file = (dir_obj: DirectoryOperations) => {
     $open_file.on('click', (event) => {
         const path = dir_obj.getAnswerFilePath();
         const $this = $(event.currentTarget);
-        $this.siblings('.message').first().html(`<strong>Answer file path: ${path}</strong>`);
+        $this.siblings('.message').first().html(`<p><small>Answer file path: ${path}</small></p>`);
     });
 };
 

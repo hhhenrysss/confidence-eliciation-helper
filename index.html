@@ -4,38 +4,40 @@
     <meta charset="UTF-8">
     <title>Data Processing Helper</title>
 </head>
-<body>
+
+<!--This style is to make the entire window draggable WILL NOT WORK WITH DEV TOOLS OPENED!-->
+<body style="-webkit-app-region: drag">
+    <div id="title_bar"></div>
     <div id="root">
-        <section><h2>Data Processing Helper</h2></section>
+        <h2>Data Processing Helper</h2>
         <section>
-            <h4>Select directory to open</h4>
+            <h3>Select directory to open</h3>
             <p>The directory is supposed to contain all user-generated JSON files</p>
+            <p><strong>DO NOT PUT ANSWER JSON FILE IN THE SAME DIRECTORY!!!</strong></p>
             <div id="open_directory">
                 <button>Open Directory</button>
                 <div class="message"></div>
             </div>
         </section>
         <section>
-            <h4>Select answer file</h4>
+            <h3>Select answer file</h3>
             <div id="open_answer_file">
                 <button>Open File</button>
                 <div class="message"></div>
             </div>
         </section>
         <section>
-            <h4>Select directory to save processed files</h4>
+            <h3>Select directory to save processed files</h3>
             <div id="save_directory">
                 <button>Open Directory</button>
                 <div class="message"></div>
             </div>
         </section>
 
-        <section>
-            <div id="submit_task">
-                <button>Submit</button>
-                <div class="message"></div>
-            </div>
-        </section>
+        <div id="submit_task">
+            <button>Submit</button>
+            <div class="message"></div>
+        </div>
     </div>
 
     <script src="src/script.js"></script>
