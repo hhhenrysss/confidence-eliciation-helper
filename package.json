@@ -6,16 +6,36 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "exec": "electron ."
+    "exec": "electron .",
+    "dist": "build"
   },
   "keywords": [
     "electron"
   ],
+  "build": {
+    "appId": "com.ConfidenceElicitation.DataHelper",
+    "category": "public.app-category.developer-tools",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    }
+  },
   "author": "Henry",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^10.12.18",
-    "electron": "^4.0.1"
+    "electron": "^4.0.1",
+    "electron-builder": "^20.38.4"
   },
   "dependencies": {
     "@types/jquery": "^3.3.29",
